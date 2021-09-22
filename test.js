@@ -1,5 +1,5 @@
 // testing the counter object
-
+/*
 
 var l = 'adfslfjguvdgfohugkposv'
 var s = 'doiguoeigcfvrpdfghiimb'
@@ -41,4 +41,29 @@ function subtractLetters(s1,s2) {
 }
 
 subtractLetters(s,l)
+*/
+//working on getting it done 
+// september 21st coding interview question
+// create a function that imitates the flat method 
+
+Array.prototype.flat = function(depth) {
+  
+  var new_array = []
+  for (var i = 0; i <this.length; i++){
+    if (typeof(this[i]) === 'number'){ 
+      new_array.push(this[i])
+    }
+    else {
+     
+      for (var j = 0; j < this[i].length; j++) {
+        
+        new_array.push(this[i][j])
+      }
+    }
+  }
+  return new_array
+}
+var l = [1,2,3,4,5,6,[12,14,16]]
+
+console.log(l.flat(1))
 
